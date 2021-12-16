@@ -14,7 +14,7 @@ public class EstadoModificarObjetoPersistente {
         Contacto contacto = null;
 
         //recuperamos el objeto
-        //1. transitivo
+        //1. detached
         contacto = em.find(Contacto.class, 3);
         
         //modificamos el objeto
@@ -27,7 +27,7 @@ public class EstadoModificarObjetoPersistente {
         //em.persist(contacto);
         em.merge(contacto);
         
-        em.getTransaction().commit();
+        em.getTransaction().commit(); //Aqui queda persistido
 
         //3. detached
         System.out.println("contacto = " + contacto);

@@ -13,7 +13,7 @@ public class EstadoEliminarObjeto {
         Contacto contacto = null;
 
         //recuperamos el objeto
-        //1. transitivo
+        //1. detached
         contacto = em.find(Contacto.class, 3);
 
         em.getTransaction().begin();
